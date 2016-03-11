@@ -2,6 +2,8 @@
 
 ## Install
 
+Make sure you already have [libserpent](https://github.com/ethereum/serpent/tree/develop) at location.
+
 ```
 gem i serpent
 ```
