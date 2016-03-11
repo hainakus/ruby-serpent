@@ -12,12 +12,13 @@ gem i serpent
 git submodule sync
 git submodule update
 
-# build libserpent
+# compile and install libserpent
 cd serpent
 make
+sudo make install
 cd ..
 
-# copy header and lib files, compile extension
+# compile extension
 rake compile
 ```
 

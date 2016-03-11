@@ -1,6 +1,8 @@
 require 'rake/extensiontask'
 require 'rake/testtask'
 
+require 'fileutils'
+
 Rake::ExtensionTask.new "serpent" do |ext|
   ext.lib_dir = 'lib/serpent'
 end
