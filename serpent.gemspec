@@ -12,11 +12,11 @@ Gem::Specification.new do |s|
   s.description = "Serpent is a Python style smart contract language."
   s.license     = 'MIT'
 
-  s.files = Dir["{lib}/**/*"] + ["LICENSE", "README.md"]
+  s.files = Dir["lib/**/*"] + ["LICENSE", "README.md"]
 
-  s.add_development_dependency('rake', '~> 10.5.0')
-  s.add_development_dependency('rake-compiler', '~> 0.9.5')
-  s.add_development_dependency('rice', '~> 2.1.0')
+  s.add_development_dependency('rake', '~> 10.5')
+  s.add_development_dependency('rake-compiler', '~> 0.9')
+  s.add_development_dependency('rice', '~> 2.1')
   s.add_development_dependency('minitest', '5.8.3')
   s.add_development_dependency('yard', '0.8.7.6')
 end

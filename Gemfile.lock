@@ -18,9 +18,9 @@ PLATFORMS
 
 DEPENDENCIES
   minitest (= 5.8.3)
-  rake (~> 10.5.0)
-  rake-compiler (~> 0.9.5)
-  rice (~> 2.1.0)
+  rake (~> 10.5)
+  rake-compiler (~> 0.9)
+  rice (~> 2.1)
   serpent!
   yard (= 0.8.7.6)
 
