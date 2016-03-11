@@ -1,15 +1,16 @@
 #include "rice/Class.hpp"
 #include "rice/String.hpp"
 
+#include "libserpent/funcs.h"
+
 using namespace Rice;
 
-Object test_hello(Object /* self */) {
-	String str("hello world");
-	return str;
+std::string serpent_compile(Object self, std::string code) {
+	return compile(code);
 }
 
 extern "C"
 void Init_serpent() {
-	Module rb_cTest = define_module("Serpent")
-		.define_method("hello", &test_hello);
+	Module rb_mSerpent = define_module("Serpent")
+		.define_module_function("compile", &serpent_compile);
 }
