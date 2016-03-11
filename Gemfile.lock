@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    serpent (0.0.1)
+    serpent (0.1.0)
 
 GEM
   remote: https://ruby.taobao.org/
