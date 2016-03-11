@@ -22,6 +22,9 @@ cd ..
 
 # compile extension
 rake compile
+
+# run test
+rake
 ```
 
 ## Usage
