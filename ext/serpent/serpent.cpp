@@ -1,9 +1,7 @@
-#include "rice/Class.hpp"
-#include "rice/String.hpp"
+#include "rice/Module.hpp"
+using namespace Rice;
 
 #include "libserpent/funcs.h"
-
-using namespace Rice;
 
 std::string serpent_compile(Object self, std::string code) {
 	return compile(code);
