@@ -5,13 +5,19 @@ require 'serpent'
 
 class SerpentTest < Minitest::Test
 
-  def test_compile
-    code = <<-SERPENT
+  CODE = <<EOF
 def main(a,b):
   return(a ^ b)
-    SERPENT
+EOF
 
-    assert_equal decode_hex('604a80600b6000396055567c0100000000000000000000000000000000000000000000000000000000600035046397d857aa8114156048576004356040526024356060526060516040510a60805260206080f35b505b6000f3'), Serpent.compile(code)
+  def test_compile
+    assert_equal decode_hex('604a80600b6000396055567c0100000000000000000000000000000000000000000000000000000000600035046397d857aa8114156048576004356040526024356060526060516040510a60805260206080f35b505b6000f3'), Serpent.compile(CODE)
+  end
+
+  def test_mk_full_signature
+    sig = Serpent.mk_full_signature(CODE).first
+    assert_equal 'main(int256,int256)', sig['name']
+    assert_equal [{'name' => 'a', 'type' => 'int256'}, {'name' => 'b', 'type' => 'int256'}], sig['inputs']
   end
 
   private
