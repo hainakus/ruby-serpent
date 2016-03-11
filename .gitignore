@@ -1,4 +1,4 @@
 tags
 tmp
-*.so
+lib/serpent/serpent.so
 .bundle
