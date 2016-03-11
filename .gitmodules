@@ -1,0 +1,3 @@
+[submodule "serpent"]
+	path = serpent
+	url = git@github.com:ethereum/serpent.git
