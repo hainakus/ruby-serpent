@@ -1,0 +1,28 @@
+PATH
+  remote: .
+  specs:
+    serpent (0.0.1)
+
+GEM
+  remote: https://ruby.taobao.org/
+  specs:
+    minitest (5.8.3)
+    rake (10.5.0)
+    rake-compiler (0.9.5)
+      rake
+    rice (2.1.0)
+    yard (0.8.7.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest (= 5.8.3)
+  rake (~> 10.5.0)
+  rake-compiler (~> 0.9.5)
+  rice (~> 2.1.0)
+  serpent!
+  yard (= 0.8.7.6)
+
+BUNDLED WITH
+   1.11.2
