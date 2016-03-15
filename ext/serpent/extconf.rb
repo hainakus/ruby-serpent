@@ -1,3 +1,4 @@
+# -*- encoding : ascii-8bit -*-
 require 'mkmf-rice'
 
 #include_dir = File.expand_path('../../../include', __FILE__)

@@ -1,3 +1,4 @@
+# -*- encoding : ascii-8bit -*-
 require 'json'
 
 require 'serpent/version'
