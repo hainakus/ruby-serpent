@@ -3,6 +3,8 @@
 module Serpent
   class Caller
 
+    N = 2**32
+
     def compile(code, **kwargs)
       FFI.compile pre_transform(code, kwargs)
     end
@@ -13,6 +15,22 @@ module Serpent
 
     def compile_lll(code)
       FFI.compile_lll ast(code)
+    end
+
+    def get_prefix(signature)
+      FFI.get_prefix(signature) % N
+    end
+
+    def mk_signature(code, **kwargs)
+      JSON.parse FFI.mk_signature(pre_transform(code, kwargs))
+    end
+
+    def mk_full_signature(code, **kwargs)
+      JSON.parse FFI.mk_full_signature(pre_transform(code, kwargs))
+    end
+
+    def mk_contract_info(code, **kwargs)
+      JSON.parse FFI.mk_contract_info(pre_transform(code, kwargs))
     end
 
     private
