@@ -3,7 +3,8 @@ require 'rake/testtask'
 
 require 'fileutils'
 
-Rake::ExtensionTask.new "serpent" do |ext|
+Rake::ExtensionTask.new "serpent_ffi" do |ext|
+  ext.ext_dir = 'ext/serpent'
   ext.lib_dir = 'lib/serpent'
 end
 
