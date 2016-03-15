@@ -4,6 +4,7 @@ require 'json'
 
 require 'serpent/version'
 require 'serpent/serpent_ffi'
+require 'serpent/node'
 require 'serpent/caller'
 
 module Serpent
@@ -12,6 +13,10 @@ module Serpent
 
   def compile(code, **kwargs)
     Caller.new.compile code, **kwargs
+  end
+
+  def compile_to_lll(code, **kwargs)
+    Caller.new.compile_to_lll code, **kwargs
   end
 
   def get_prefix(signature)

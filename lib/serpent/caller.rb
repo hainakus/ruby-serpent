@@ -7,8 +7,8 @@ module Serpent
       FFI.compile pre_transform(code, kwargs)
     end
 
-    def compile_to_lll(x)
-      FFI.compile_lll take(x)
+    def compile_to_lll(code, **kwargs)
+      Node.build FFI.compile_to_lll(pre_transform(code, kwargs))
     end
 
     def parse_to_lll(code)

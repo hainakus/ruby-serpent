@@ -35,6 +35,10 @@ std::string serpent_compile(Object self, std::string code) {
 	//return compileLLL(program);
 //}
 
+Array serpent_compile_to_lll(Object self, std::string code) {
+	return serialize_node(compileToLLL(code));
+}
+
 Array serpent_parse_lll(Object self, std::string code) {
 	return serialize_node(parseLLL(code));
 }
@@ -61,6 +65,7 @@ void Init_serpent_ffi() {
 
 	Module rb_mSerpentFFI = define_module_under(rb_mSerpent, "FFI")
 		.define_module_function("compile", &serpent_compile)
+		.define_module_function("compile_to_lll", &serpent_compile_to_lll)
 		.define_module_function("parse_lll", &serpent_parse_lll)
 		.define_module_function("mk_signature", &serpent_mk_signature)
 		.define_module_function("mk_full_signature", &serpent_mk_full_signature)
