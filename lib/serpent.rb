@@ -19,6 +19,10 @@ module Serpent
     Caller.new.compile_to_lll code, **kwargs
   end
 
+  def compile_lll(code)
+    Caller.new.compile_lll code
+  end
+
   def get_prefix(signature)
     FFI.get_prefix signature
   end

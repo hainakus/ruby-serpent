@@ -11,13 +11,13 @@ module Serpent
       Node.build FFI.compile_to_lll(pre_transform(code, kwargs))
     end
 
-    def parse_to_lll(code)
-      FFI.parse_lll(code)
+    def compile_lll(code)
+      FFI.compile_lll ast(code)
     end
 
     private
 
-    def take(x)
+    def ast(x)
       x.instance_of?(String) ? FFI.parse_lll(x) : x.out
     end
 
