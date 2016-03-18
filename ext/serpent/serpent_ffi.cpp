@@ -87,11 +87,16 @@ unsigned int serpent_get_prefix(Object self, std::string signature) {
 	return getPrefix(signature);
 }
 
+void serpent_exception_handler(std::string const & ex) {
+	rb_raise(rb_eRuntimeError, ex.c_str());
+}
+
 extern "C"
 void Init_serpent_ffi() {
 	Module rb_mSerpent = define_module("Serpent");
 
 	Module rb_mSerpentFFI = define_module_under(rb_mSerpent, "FFI")
+		.add_handler<std::string>(serpent_exception_handler)
 		.define_module_function("compile", &serpent_compile)
 		.define_module_function("compile_to_lll", &serpent_compile_to_lll)
 		.define_module_function("parse_lll", &serpent_parse_lll)
